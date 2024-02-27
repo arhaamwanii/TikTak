@@ -1,2 +1,0 @@
-main game board
-a log below the game

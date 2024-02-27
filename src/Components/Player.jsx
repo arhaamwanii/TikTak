@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 
 export const Player = ({name , symbol}) => {
- 
+
   const [inputField , setInputField] = useState( <span className="player-name">{name}</span>)
   const [check , setCheck] = useState(true)
   const [buttonValue , setButtonValue] = useState(true)
@@ -14,15 +14,6 @@ export const Player = ({name , symbol}) => {
     setRecieveInput(newValue)
 
   }
-
-  //ENTER CALL FUNTION
-
-  // function handleKeyPress(e){
-  //   if (e.key === 'Enter') {
-  //     this.handleName();
-        
-  //   }
-  // }
 
   //HANDLE FOCUS
 
