@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react'
 export const Player = ({name , symbol}) => {
  
   const [inputField , setInputField] = useState( <span className="player-name">{name}</span>)
-  const [check , setCheck] = useState(false)
+  const [check , setCheck] = useState(true)
   const [buttonValue , setButtonValue] = useState(true)
   const [recieveInput , setRecieveInput] = useState(name)
 
@@ -24,6 +24,14 @@ export const Player = ({name , symbol}) => {
   //   }
   // }
 
+  //HANDLE FOCUS
+
+  const handleFocus = (event) => {
+    // Select the text inside the input field
+      event.target.select();
+
+  };
+
   //INTERCHANGING INPUT AND SPAN
 
   function handleName(){
@@ -31,7 +39,7 @@ export const Player = ({name , symbol}) => {
     setCheck((check) => !check )
 
     if(check){
-      setInputField(<input type="text" defaultValue={recieveInput} onChange={handleInput}/> )
+      setInputField(<input type="text" defaultValue={recieveInput} onChange={handleInput}  onFocus={handleFocus} autoFocus/> )
     }
     else(
      setInputField( <span className="player-name">{recieveInput}</span>)
