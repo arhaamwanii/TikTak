@@ -3,5 +3,6 @@
 -in case of react when updating your state based on the previous value you sould not do it direcly you should lauch an anonymous mfuntion to get the latest value of the state otherwise it will do it based of the value which was set at the time of last rerender/compnonet mounting and will not consider the chages made to it after that-- using this method you ensure that the most recent value of the state is recieved.
 -.map
     it creates a new array. and iterates over that
+    by default gives you an parameter acutall component(required) + gives you an index(number based on positio)
 -for of
     it dosnt create  anew array and iterates over the original array instead
