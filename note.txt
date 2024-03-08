@@ -6,3 +6,5 @@
     by default gives you an parameter acutall component(required) + gives you an index(number based on positio)
 -for of
     it dosnt create  anew array and iterates over the original array instead
+
+map is used such that once it is called on a array lets sa y it calls a function every on each value of the array -- and me make it store that in new array which we form at that time
