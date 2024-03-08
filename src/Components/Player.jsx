@@ -43,6 +43,7 @@ export const Player = ({name , symbol}) => {
  
   //JSX
 
+  
   return (
 
         <li>
@@ -54,8 +55,6 @@ export const Player = ({name , symbol}) => {
               {buttonValue ? "Edit" : "Save" }
             </button>
         </li>
-    
-
 
     )
 }
