@@ -4,7 +4,18 @@
 -.map
     it creates a new array. and iterates over that
     by default gives you an parameter acutall component(required) + gives you an index(number based on positio)
+    in our case we rndered for every value in the initalGameboard an list item
+    for this list item, we did not use the inital value of the game board but insted we created a whole new map  for that inital "row" which is just the reffernce to the value inside the inital game board whihc itself is a array with the col stuff inside it 
 -for of
     it dosnt create  anew array and iterates over the original array instead
 
-map is used such that once it is called on a array lets sa y it calls a function every on each value of the array -- and me make it store that in new array which we form at that time
+-UPDATING STATE IMUTABLY
+    in case if javascript the values of arrays and objects don't give you the actuall value it gives you the reffernce to the actuall value
+    "state that depends on an array or an object should be updated in an imuatble way"
+    - so what we do is instead of directly udating the arra/object we make a copy of it and then update that
+    
+LIFTING THE STATE UP 
+    -if there is a value which is in an component which we want to use in other comonents
+    -what we do is the we take that value or whatever it is and lift it up to the parent component so like that every other component would have acess to this vaue via props
+
+    

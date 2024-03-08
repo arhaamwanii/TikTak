@@ -4,6 +4,10 @@ import { GameBoard } from "./Components/GameBoard";
 
 
 function App() { 
+  const [activePlayer , setActivePlayer] = useState('X')
+  function handleSelectSquare(){
+    
+  }
 
   return (
     <main>

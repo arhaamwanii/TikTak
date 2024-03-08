@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+ 
 
 //GAME BOARD STORAGE -- INITIAL
 
@@ -9,17 +10,32 @@ const intialGameBoard = [
 ]
 console.log(intialGameBoard)
 
-
 //JSX
 
 export const GameBoard = () => {
+    
+    const [gameBoard , setGameBoard] = useState(intialGameBoard);
+
+/// FUNCTION USED TO  CREATE THE
+ 
+    function handleSelectSqaure(rowIndex , colIndex , xoro){ //which inner array was cliked which null should be replaced 
+        setGameBoard((prevGameBoard) => {
+            const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])]
+            updatedBoard[rowIndex][colIndex] = 'X'
+            return updatedBoard
+        })
+        };
+// in this case we are updating the value in an imutable way,
+    
+
   return (
     <ol id='game-board'>
-        {intialGameBoard.map((row , rowIndex) => <li key={rowIndex}>
+        {gameBoard.map((row , rowIndex) => <li key={rowIndex}>
             <ol>
-                {row.map((col, colIndex) => <li key={colIndex}>
-                    <button>
-                        0
+                {row.map((playerSymbol, colIndex) => <li key={colIndex}>
+                    <button onClick={ () => handleSelectSqaure(rowIndex , colIndex) }>
+                        {playerSymbol} 
+                        {/* this is waht will represent 0/x */}
                     </button>
                 </li> ) }
             </ol>
