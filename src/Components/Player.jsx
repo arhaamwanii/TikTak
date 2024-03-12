@@ -39,7 +39,7 @@ export const Player = ({name , symbol}) => {
       setButtonValue(e => !e)
 
   }
-
+//in the end we all die 
  
   //JSX
 
