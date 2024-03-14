@@ -27,7 +27,7 @@ export const Player = ({name , symbol}) => {
 
   function handleName(){
 
-    setCheck((check) => !check )
+    setCheck((check) => !check )b  
 
     if(check){
       setInputField(<input type="text" defaultValue={recieveInput} onChange={handleInput}  onFocus={handleFocus} autoFocus/> )
