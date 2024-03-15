@@ -53,6 +53,8 @@ for(const combination of WINNING_COMBINATIONS ){
     }
 }
 
+const hasDraw = gameTurns.length === 9 && !winner //so in that
+
   function handleSelectSquare(rowIndex , colIndex){
     // setActivePlayer((switchPlayer) => switchPlayer === 'X' ? 'O' : 'X' );
     setGameTurns(prevTurns => {
@@ -65,6 +67,10 @@ for(const combination of WINNING_COMBINATIONS ){
     })
   }
 
+function handleRestart(){
+  setGameTurns([])
+}
+
   return (
     <main>
         <div id="game-container">
@@ -73,7 +79,7 @@ for(const combination of WINNING_COMBINATIONS ){
           <Player name="player two"symbol={'0'} isActive={activePlayer === 'O'}/> 
          
         </ol>
-        {winner && <Gameover winner={winner}/>}
+        {(winner || hasDraw ) && <Gameover winner={winner} onRestart={handleRestart} />}
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard}/>
         </div>
         <Log turns={gameTurns}/>
@@ -97,3 +103,10 @@ export default App
 
 
 //we are going to check for the match of the vlaues in the intial game baord and
+
+//draw - if all the fields arepopulated
+    //and still the WINNING_COMBIANTIONS are not matched
+
+
+//RESTARTING THE GAME 
+    //- all we have to do is to set the gameTurn state back to [] nothing
