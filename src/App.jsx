@@ -94,24 +94,3 @@ function handleRestart(){
 }
 
 export default App
-
-//which player is currently active 
-  //change of the color'
-  //placing of the symbol on the board
- {/* we only want one box to light up which is the one which is going to play - inside of the player comonent we are checking for the value ture or false -- so the value of the actuall state won't be changed just the prop value will be given based of this check -- i.e at one time the isActive can either be X or Y and just like that after checking fot x and y i will be passing down ture in one and fasle in other*/}
-
-
-
-//well you have to consider this what is your goal -
-  //goal is to get to shipping as fast as possible so here is the deal what you do is you finish the course as fast as possibl you don't need to  learn everythign but yuou need to learn most and the you get to building projects so  in that case there will be a minimal loss of time as well and will be working on things that matter not the ones that don't
-
-
-
-//we are going to check for the match of the vlaues in the intial game baord and
-
-//draw - if all the fields arepopulated
-    //and still the WINNING_COMBIANTIONS are not matched
-
-
-//RESTARTING THE GAME 
-    //- all we have to do is to set the gameTurn state back to [] nothing

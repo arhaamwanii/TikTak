@@ -60,17 +60,3 @@ export const Player = ({name , symbol , isActive }) => {
 
     )
 }
-
-
-//when the button is presend i want the user to show the input field 
-    //button clicked 
-    //text which is being showed direcly gets replaced with an input filed
-    //button clicke agian it replaces it again
-    //input from the innput field is collected and stored and then showed in old box again
-
-
-
-//also when once the button is clicked untill switch it from its previous state save -> edit
-
-
-//
