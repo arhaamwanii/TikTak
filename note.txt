@@ -37,6 +37,13 @@ FOR A FOR OF LOOP TO  EXECUTE
 
 
 MANAGE AS LITTLE STATE AS POSSIBLE
-    you should try to derive as many states as possible from a single one
+    - you should try to derive as many states as possible from a single one
+    - drive the living Fuck out of the states
+
+
+NULL IN JS is treated as a  - FALSE
+
+    
+    
 
     

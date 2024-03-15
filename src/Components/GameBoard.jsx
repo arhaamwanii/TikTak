@@ -3,19 +3,14 @@ import React, { useState } from 'react'
 
 //GAME BOARD STORAGE -- INITIAL
 
-const intialGameBoard = [
-    [null , null , null],
-    [null , null , null],
-    [null , null , null],
-]
-console.log(intialGameBoard)
 
 //JSX
 
-export const GameBoard = ({onSelectSquare , turns }) => { 
+export const GameBoard = ({onSelectSquare , board }) => { 
     
 /// FUNCTION USED TO  CREATE THE - new game board based on the input it has been given: 1: which button is clicked i.e which value to replace on the board 2: which player clicked it
-    // const [gameBoard , setGameBoard] = useState(intialGameBoard);
+    
+// const [gameBoard , setGameBoard] = useState(intialGameBoard);
 
     // function handleSelectSqaure(rowIndex , colIndex , xoro){
     //     setGameBoard((prevGameBoard) => { 
@@ -29,26 +24,16 @@ export const GameBoard = ({onSelectSquare , turns }) => {
 
 //TRANSFORING THE TURNS ARRAY INTO ONE OF THE SUCH INITIAL GAMEBOARD KIND OF ARRAY
 
-let gameBoard = intialGameBoard;
-
-for (const turn of turns){
-    const {square , player} = turn;
-    const {row  , col } = square;
-
-    gameBoard[row][col] = player;
-}
 
 //game board is a computed value which is derived from some state in this case from turns -- 
 
   return (
     <ol id='game-board'>
-        {gameBoard.map((row , rowIndex) => <li key={rowIndex}>
+        {board.map((row , rowIndex) => <li key={rowIndex}>
             <ol>
                 {row.map((playerSymbol, colIndex) => <li key={colIndex}>
-                    <button onClick={() => onSelectSquare(rowIndex , colIndex) }> 
-                    {/* so now we are directly calling the function we before were calling through gameboard function */}
+                    <button onClick={() => onSelectSquare(rowIndex , colIndex) } disabled={playerSymbol !== null}> 
                         {playerSymbol} 
-                        {/* this is waht will represent 0/x */}
                     </button>
                 </li> ) }
             </ol>

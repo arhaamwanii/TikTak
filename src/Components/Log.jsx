@@ -12,7 +12,7 @@ export const Log = ({ turns}) => {
 }
 //array that grwos with every button click
     //other component has the value for that
-    //lift the state up
+    //lift the state up 
 
 
 //well we sure need that thign  in here, will be mapped to l
