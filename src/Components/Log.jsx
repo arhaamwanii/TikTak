@@ -1,14 +1,11 @@
-import { Linter } from 'eslint'
 import React from 'react'
 
 export const Log = ({ turns}) => {
   return (
-    <div>
+    <div> <ol id='log'>
         {
-            turns.map(turn => <Li>{turn.player}selected{turn.square.row}</Li>)
+            turns.map(turn => <li key={`${turn.square.row} ${turn.square.col}`} >{turn.player}selected{turn.square.row} , {turn.square.col}</li>)
         }
-        <ol id='log'>
-        
         </ol>
     </div>
   )
