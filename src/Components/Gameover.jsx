@@ -7,7 +7,7 @@ export const Gameover = ({winner , onRestart}) => {
             Game Over!
         </h2>
 
-        {winner && <p>{winner}won!</p>}
+        {winner && <p>{winner} won!</p>}
         {!winner && <p>You have a Draw - !</p> }
         <p>
             <button onClick={onRestart}>Rematch!</button>

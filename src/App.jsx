@@ -26,6 +26,10 @@ function deriveActivePlayer(gameTurns){
 
 function App() { 
   const [gameTurns , setGameTurns ] = useState([]);
+  const [players , setPlayers] = useState({
+    X : ' Player 1',
+    O : ' Player 2'
+  })
   // const [hasWinner , setHasWinner ] = useState(false)
   // const [activePlayer , setActivePlayer] = useState('X') //we choose to keep the X the first active player
 
@@ -70,6 +74,7 @@ const hasDraw = gameTurns.length === 9 && !winner //so in that
 function handleRestart(){
   setGameTurns([])
 }
+
 
   return (
     <main>

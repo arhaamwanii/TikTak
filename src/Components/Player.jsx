@@ -71,3 +71,6 @@ export const Player = ({name , symbol , isActive }) => {
 
 
 //also when once the button is clicked untill switch it from its previous state save -> edit
+
+
+//
