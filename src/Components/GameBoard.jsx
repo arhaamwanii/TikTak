@@ -12,32 +12,41 @@ console.log(intialGameBoard)
 
 //JSX
 
-export const GameBoard = ({onSelectSquare , activePLayerSymbol }) => { 
+export const GameBoard = ({onSelectSquare , turns }) => { 
     
-    const [gameBoard , setGameBoard] = useState(intialGameBoard);
-    
-
 /// FUNCTION USED TO  CREATE THE - new game board based on the input it has been given: 1: which button is clicked i.e which value to replace on the board 2: which player clicked it
- 
-    function handleSelectSqaure(rowIndex , colIndex , xoro){ //which inner array was cliked which null should be replaced 
-        setGameBoard((prevGameBoard) => { //change value based of the previous
-            const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])] //copying the inner inner arrays as well - not just the outer array
-            updatedBoard[rowIndex][colIndex] = activePLayerSymbol
-            return updatedBoard
-        })
+    // const [gameBoard , setGameBoard] = useState(intialGameBoard);
 
-        onSelectSquare(); //this will call the function in app.jsx
-        //we are switching the active player
-       };
+    // function handleSelectSqaure(rowIndex , colIndex , xoro){
+    //     setGameBoard((prevGameBoard) => { 
+    //         const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])] //copying the inner inner arrays as well - not just the outer array
+    //         updatedBoard[rowIndex][colIndex] = activePLayerSymbol
+    //         return updatedBoard
+    //     })
 
-    
+    //     onSelectSquare();
+    //    };
+
+//TRANSFORING THE TURNS ARRAY INTO ONE OF THE SUCH INITIAL GAMEBOARD KIND OF ARRAY
+
+let gameBoard = intialGameBoard;
+
+for (const turn of turns){
+    const {square , player} = turn;
+    const {row  , col } = square;
+
+    gameBoard[row][col] = player;
+}
+
+//game board is a computed value which is derived from some state in this case from turns -- 
 
   return (
     <ol id='game-board'>
         {gameBoard.map((row , rowIndex) => <li key={rowIndex}>
             <ol>
                 {row.map((playerSymbol, colIndex) => <li key={colIndex}>
-                    <button onClick={ () => {handleSelectSqaure(rowIndex , colIndex  )} }> 
+                    <button onClick={() => onSelectSquare(rowIndex , colIndex) }> 
+                    {/* so now we are directly calling the function we before were calling through gameboard function */}
                         {playerSymbol} 
                         {/* this is waht will represent 0/x */}
                     </button>

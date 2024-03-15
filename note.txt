@@ -24,6 +24,19 @@ repeat
 LIFTING THE STATE UP 
     -managing the state in the closest ancestor component that  need that information 
     - passing it down usign PROPS 
+    - THIS IS SOMETHING YOU WILL HAVE TO DO A LOT OF
 
+    - another thign if you 
+        -check a state at the time of passing it it will pass true or false based on the check rather than the actuall value
+
+FOR A FOR OF LOOP TO  EXECUTE
+    for an for of loop to execute - for a for of loo
+    for(cosnt hour of hours){
+        if hours here is empety this loop won't even begin but if it is not then we can start to see things happening
+    }
+
+
+MANAGE AS LITTLE STATE AS POSSIBLE
+    you should try to derive as many states as possible from a single one
 
     
