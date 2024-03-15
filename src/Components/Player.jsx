@@ -22,12 +22,14 @@ export const Player = ({name , symbol}) => {
       event.target.select();
 
   };
+a
+  //INTERCHANGING INPUT AND SPAN 
+// thge[]
 
-  //INTERCHANGING INPUT AND SPAN
 
   function handleName(){
 
-    setCheck((check) => !check )b  
+    setCheck((check) => !check ) 
 
     if(check){
       setInputField(<input type="text" defaultValue={recieveInput} onChange={handleInput}  onFocus={handleFocus} autoFocus/> )
