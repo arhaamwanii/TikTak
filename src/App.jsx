@@ -31,7 +31,7 @@ function App() {
 
   const activePlayer = deriveActivePlayer(gameTurns)
 
-  let gameBoard = intialGameBoard;
+  let gameBoard = [...intialGameBoard.map(array => [...array])];
 
   for (const turn of gameTurns){
       const {square , player} = turn;
@@ -39,7 +39,7 @@ function App() {
   
       gameBoard[row][col] = player;
   }
-  let winner = null
+  let winner 
 
 for(const combination of WINNING_COMBINATIONS ){
   const firstSquareSymbol = gameBoard[combination[0].row][combination[0].column]
