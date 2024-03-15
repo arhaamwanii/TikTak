@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 
-export const Player = ({name , symbol}) => {
+export const Player = ({name , symbol , isActive }) => {
 
   const [inputField , setInputField] = useState( <span className="player-name">{name}</span>)
   const [check , setCheck] = useState(true)
@@ -22,9 +22,9 @@ export const Player = ({name , symbol}) => {
       event.target.select();
 
   };
-a
-  //INTERCHANGING INPUT AND SPAN 
-// thge[]
+
+  //INTERCHANGING INPUT AND SPAN --
+
 
 
   function handleName(){
@@ -43,12 +43,12 @@ a
   }
 //in the end we all die 
  
-  //JSX
+  //JSX 
 
   
   return (
 
-        <li>
+        <li className={isActive ? "active" : undefined } >
             <span className="player">
               {inputField}
               <span className="player-symbol">{symbol}</span>  

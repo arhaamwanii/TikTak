@@ -12,20 +12,24 @@ console.log(intialGameBoard)
 
 //JSX
 
-export const GameBoard = () => {
+export const GameBoard = ({onSelectSquare , activePLayerSymbol }) => { 
     
     const [gameBoard , setGameBoard] = useState(intialGameBoard);
+    
 
-/// FUNCTION USED TO  CREATE THE
+/// FUNCTION USED TO  CREATE THE - new game board based on the input it has been given: 1: which button is clicked i.e which value to replace on the board 2: which player clicked it
  
     function handleSelectSqaure(rowIndex , colIndex , xoro){ //which inner array was cliked which null should be replaced 
-        setGameBoard((prevGameBoard) => {
-            const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])]
-            updatedBoard[rowIndex][colIndex] = 'X'
+        setGameBoard((prevGameBoard) => { //change value based of the previous
+            const updatedBoard = [...prevGameBoard.map(innerArray => [...innerArray])] //copying the inner inner arrays as well - not just the outer array
+            updatedBoard[rowIndex][colIndex] = activePLayerSymbol
             return updatedBoard
         })
-        };
-// in this case we are updating the value in an imutable way,
+
+        onSelectSquare(); //this will call the function in app.jsx
+        //we are switching the active player
+       };
+
     
 
   return (
@@ -33,7 +37,7 @@ export const GameBoard = () => {
         {gameBoard.map((row , rowIndex) => <li key={rowIndex}>
             <ol>
                 {row.map((playerSymbol, colIndex) => <li key={colIndex}>
-                    <button onClick={ () => handleSelectSqaure(rowIndex , colIndex) }>
+                    <button onClick={ () => {handleSelectSqaure(rowIndex , colIndex  )} }> 
                         {playerSymbol} 
                         {/* this is waht will represent 0/x */}
                     </button>

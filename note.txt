@@ -14,8 +14,16 @@
     "state that depends on an array or an object should be updated in an imuatble way"
     - so what we do is instead of directly udating the arra/object we make a copy of it and then update that
     
+repeat
+    - in js first if you make a obj then you make a copy of the obj if you opdate the copy you will be updating the actuall object as well
+    - so we need to make a deep copy  i.e [...objectFirst]
+
+    - updating state in an imutable way means that we first make a copy of the object/array then we go ahead and update that instead of just updating the object/array directly
+    - deep copy i.e [...firstObject]
+
 LIFTING THE STATE UP 
-    -if there is a value which is in an component which we want to use in other comonents
-    -what we do is the we take that value or whatever it is and lift it up to the parent component so like that every other component would have acess to this vaue via props
+    -managing the state in the closest ancestor component that  need that information 
+    - passing it down usign PROPS 
+
 
     
